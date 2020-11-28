@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div id="content">
+
+    <h1>{{.Title}} </h1>
+    <span>
+        {{ with .Params.tags }}
+        tags :
+        {{ range .}}
+        <a href="/tags/{{ . | urlize }}">{{ . }} </a>
+        {{ end }}
+        {{ end }}
+
+    </span>
+    <br>
+    <br>
+
+
+    <span>Dibuat pada tanggal {{  .Date.Format "2006-01-02"  }} </span>
+    <br>
+    <img src="/img/{{ .Params.featured_image | urlize }} " alt="" srcset="">
+    <hr>
+    <div>
+        {{ .Content }}
+    </div>
+</div>
+{{- partial "sidebar.html" . -}}
+
+
+
+{{ end }}

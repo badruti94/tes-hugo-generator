@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+
+<div id="content">
+    <h4>Ini halaman Home</h4>
+<h5>Selamat datang disini</h5>
+
+Artikel
+<ul>
+    {{ range (.Paginate (where .Site.RegularPages "Section" "posts")).Pages }}
+    <li>
+        <a href=" {{ .Permalink }} "> {{ .Title }} </a>
+        <p> {{ or .Params.description .Summary }} </p>
+        <span> {{ .Date.Format "2006-01-02" }} </span>
+    </li>
+    {{ end }}
+
+
+
+</ul>
+{{ template "_internal/pagination.html" . }}
+</div>
+
+{{ end }}

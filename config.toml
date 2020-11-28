@@ -1,0 +1,8 @@
+baseURL = "https://tes-hugo.herokuapp.com/"
+languageCode = "id-id"
+title = "Tutorial Pemrogaman WEb"
+theme = "skoding"
+summaryLength = 10
+paginate = 2
+[params]
+    Description = "Tempat belajar koding"
